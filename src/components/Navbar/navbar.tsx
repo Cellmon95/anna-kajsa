@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import styles from './navbar.module.css';
 
 export default function Navbar() {
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
@@ -23,16 +24,20 @@ export default function Navbar() {
   };
 
   return (
-    <header className="">
-      <div className={`  ${scrollDistans > 0 ? '' : ''}`}>
-        <h3 className="">Styrbjörn</h3>
+    <header className={styles.header}>
+      <div
+        className={`${styles.navWrapper} ${
+          scrollDistans > 0 ? styles.navWrapperActive : ''
+        }`}
+      >
+        <h3>anna-kajsa</h3>
         <motion.nav
-          className=""
+          className={styles.motionNav}
           variants={variant}
           transition={{ duration: 0.5, ease: 'easeInOut' }} // define the framer motion transition
           animate={burgerMenuOpen ? 'active' : 'inactive'} // tells framer when to transition
         >
-          <div className="">
+          <div className={styles.buttonContainer}>
             <div></div>
             <button
               className=""

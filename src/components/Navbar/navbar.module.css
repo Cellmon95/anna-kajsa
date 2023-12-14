@@ -1,0 +1,36 @@
+.header {
+  width: 100%;
+  height: 0%;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.navWrapper {
+  padding-inline: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+}
+.navWrapperActive {
+  background-color: brown;
+}
+.motionNav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: brown;
+}
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 64px;
+}
