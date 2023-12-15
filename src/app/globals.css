@@ -1,6 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:bold);
 @import url(https://fonts.googleapis.com/css?family=Poppins);
 @import url(https://fonts.googleapis.com/css?family=Quicksand);
-
 
 :root {
   --background-primary: #ffffff;
@@ -12,6 +12,10 @@
   --black: #000000;
   --red: #c80000;
   --dark-green: #04814f;
+}
+
+body {
+  margin: 0;
 }
 
 h1,
