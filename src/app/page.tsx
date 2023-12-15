@@ -5,7 +5,7 @@ import TitledParagraph from "@/components/TiltledParagraph/titledParagraph";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <TitledParagraph></TitledParagraph>
+      <TitledParagraph backgroundColor="#ff66c4"></TitledParagraph>
     </main>
   );
 }
