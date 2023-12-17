@@ -41,3 +41,13 @@
   padding-inline: 64px;
   height: 64px;
 }
+.iconButton {
+  background-color: transparent;
+  border: none;
+}
+.links {
+  font-size: 24px;
+}
+.lastLink {
+  height: 64px;
+}
