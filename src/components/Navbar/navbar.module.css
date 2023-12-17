@@ -1,9 +1,10 @@
 .header {
   width: 100%;
-  height: 0%;
+  max-width: 100vw;
   position: sticky;
   top: 0;
   left: 0;
+  overflow-x: clip;
 }
 .navWrapper {
   padding-inline: 64px;
@@ -12,9 +13,11 @@
   align-items: center;
   height: 64px;
   width: 100%;
+  position: relative;
 }
 .navWrapperActive {
-  background-color: brown;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
 }
 .motionNav {
   display: flex;
@@ -26,11 +29,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: brown;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  z-index: 5;
 }
 .buttonContainer {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-inline: 64px;
+  height: 64px;
 }

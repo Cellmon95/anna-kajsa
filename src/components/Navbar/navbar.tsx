@@ -27,7 +27,9 @@ export default function Navbar() {
     <header className={styles.header}>
       <div
         className={`${styles.navWrapper} ${
-          scrollDistans > 0 ? styles.navWrapperActive : ''
+          scrollDistans > 0 && burgerMenuOpen !== true
+            ? styles.navWrapperActive
+            : ''
         }`}
       >
         <h3>anna-kajsa</h3>
@@ -53,13 +55,19 @@ export default function Navbar() {
             onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
             href={'/About'}
           >
-            About
+            consulting work
           </Link>
           <Link
             onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
             href={'/Work'}
           >
-            Work
+            philanthropic work
+          </Link>
+          <Link
+            onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
+            href={'/Work'}
+          >
+            Creative work
           </Link>
         </motion.nav>
         <button className="" onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}>
