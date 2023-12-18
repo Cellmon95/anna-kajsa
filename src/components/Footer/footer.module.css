@@ -1,0 +1,15 @@
+.collumns {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 18px;
+}
+.footer {
+  min-height: 200px;
+  width: 100%;
+  background-color: var(--background-home);
+  display: flex;
+  padding-block: 32px;
+  padding-inline: 16px;
+  justify-content: space-between;
+}
