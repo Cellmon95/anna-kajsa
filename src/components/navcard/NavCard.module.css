@@ -1,11 +1,12 @@
 .wrapper {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: aqua;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
   height: 31.938rem; /*  510px */
-  width: 19.438rem; /* 311px */
+  min-width: 19.438rem; /* 311px */
   border-radius: 10px;
 }
 
