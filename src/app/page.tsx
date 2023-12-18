@@ -11,23 +11,23 @@ export default function Home() {
       <Carousel>
         <NavCard
           title="title"
-          description="Apor är roliga husdjur"
+          description="Apor är roliga husdjur och kan lära sig att spela gitarr"
           link={'/contact'}
           linktitle="Kontakta oss ->"
           image="/image/yes.jpg"
         />
         <NavCard
           title=" second title"
-          description="Tigrar är roliga husdjur"
+          description="Tigrar är roliga husdjur och kan lära sig att spela gitarr"
           link={'/contact'}
-          linktitle="Kontakta oss ->"
+          linktitle="konsult ->"
           image="/image/perhapsjpg.jpg"
         />
         <NavCard
           title="third title"
-          description="Myrslook är roliga husdjur"
+          description="Myrslook är roliga husdjur och kan lära sig att spela gitarr"
           link={'/contact'}
-          linktitle="Kontakta oss ->"
+          linktitle="filantropi ->"
           image="./image/first-law.jpg"
         />
       </Carousel>
