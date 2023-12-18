@@ -5,6 +5,8 @@
   top: 0;
   left: 0;
   overflow-x: clip;
+  --x-to: 0%;
+  --x-from: 100%;
 }
 .navWrapper {
   padding-inline: 64px;
@@ -50,4 +52,26 @@
 }
 .lastLink {
   height: 64px;
+}
+@media screen and (min-width: 640px) {
+  .header {
+    --x-to: 0%;
+    --x-from: 0%;
+  }
+  .motionNav {
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    position: static;
+    gap: 2rem;
+  }
+  .iconButton {
+    display: none;
+  }
+  .buttonContainer {
+    display: none;
+  }
+  .lastLink {
+    height: fit-content;
+  }
 }

@@ -6,7 +6,7 @@ import styles from './navbar.module.css';
 
 export default function Navbar() {
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
-  const [scrollDistans, setScrollDistans] = useState(0);
+  const [scrollDistans, setScrollDistans] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,11 +17,20 @@ export default function Navbar() {
 
   const variant = {
     // define the direction of the framer motion transition
-    active: { x: '0%' },
+    active: { x: 'var(--x-to)' },
     inactive: {
-      x: '100%',
+      x: 'var(--x-from)',
     },
   };
+
+  function toggleScroll() {
+    setBurgerMenuOpen(!burgerMenuOpen);
+    if (burgerMenuOpen == true) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
+    }
+  }
 
   return (
     <header className={styles.header}>
@@ -41,10 +50,7 @@ export default function Navbar() {
         >
           <div className={styles.buttonContainer}>
             <div></div>
-            <button
-              className={styles.iconButton}
-              onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
-            >
+            <button className={styles.iconButton} onClick={toggleScroll}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="30"
@@ -65,29 +71,26 @@ export default function Navbar() {
           <Link
             className={styles.links}
             onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
-            href={'/About'}
+            href={'/consult'}
           >
             consulting work
           </Link>
           <Link
             className={styles.links}
             onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
-            href={'/Work'}
+            href={'/philanthrophy'}
           >
             philanthropic work
           </Link>
           <Link
             className={`${styles.lastLink} ${styles.links}`}
             onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
-            href={'/Work'}
+            href={'/creative'}
           >
             Creative work
           </Link>
         </motion.nav>
-        <button
-          className={styles.iconButton}
-          onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
-        >
+        <button className={styles.iconButton} onClick={toggleScroll}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="30"
