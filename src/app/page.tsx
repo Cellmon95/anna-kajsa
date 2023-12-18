@@ -3,11 +3,12 @@ import styles from './page.module.css';
 import TitledParagraph from '@/components/TiltledParagraph/titledParagraph';
 import NavCard from '@/components/navcard/NavCard';
 import Carousel from '@/components/carousel/Carousel';
+import Quote from '@/components/Quote/Quote';
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <TitledParagraph></TitledParagraph>
+      <Quote></Quote>
       <Carousel>
         <NavCard
           title="title"
