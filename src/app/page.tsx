@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import NavCard from '@/components/navcard/NavCard';
+import Carousel from '@/components/carousel/Carousel';
 
 export default function Home() {
   return (
@@ -10,13 +11,6 @@ export default function Home() {
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
         </p>
-        <NavCard
-          title="Hejsan"
-          description="Apor är roliga husdjur har jag hört"
-          image={'/image/yes.jpg'}
-          link={'/contact'}
-          linktitle={'Kontakt ->'}
-        />
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -98,6 +92,29 @@ export default function Home() {
           </p>
         </a>
       </div>
+      <NavCard
+        title="Documentation"
+        description="Find in-depth information about Next.js features and API."
+        image={'/yes.jpg'}
+        link={'/contact'}
+      />
+      {/* <Carousel>
+        <NavCard
+          title="Documentation"
+          description="Find in-depth information about Next.js features and API."
+          link={'/contact'}
+        />
+        <NavCard
+          title="Learn"
+          description="Learn about Next.js in an interactive course with quizzes!"
+          link={'/creative'}
+        />
+        <NavCard
+          title="Examples"
+          description="Discover and deploy boilerplate example Next.js projects."
+          link={'/consult'}
+        />
+      </Carousel> */}
     </main>
   );
 }
