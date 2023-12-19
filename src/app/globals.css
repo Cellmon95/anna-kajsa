@@ -12,6 +12,11 @@
   --red: #c80000;
   --dark-green: #04814f;
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 h1,
 h2 {
@@ -53,4 +58,9 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+a {
+  font-family: Poppins;
+  color: black;
+  text-decoration: none;
 }
