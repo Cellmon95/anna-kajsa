@@ -7,18 +7,27 @@ import HeroHome from "@/components/HeroHome/heroHome";
 
 export default async function Home() {
   const pageData = await fetchData();
-  console.log(pageData);
+
   return (
     <main className={styles.main}>
-      <h1></h1>
+      <h1>{pageData.title}</h1>
     </main>
   );
 }
 
+// TODO:: make safer
 export async function fetchData() {
-  const pageData = await client.fetch(
-    "*[_type == 'page' && slug.current=='home-page']"
-  );
+  let pageData = [];
+
+  try {
+    pageData = await client.fetch(
+      "*[_type == 'page' && slug.current=='home-page']"
+    );
+
+    pageData = pageData.pop();
+  } catch (error) {
+    console.error(error);
+  }
 
   return pageData;
 }
