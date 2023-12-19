@@ -5,33 +5,31 @@ import NavCard from '@/components/navcard/NavCard';
 import Carousel from '@/components/carousel/Carousel';
 import Quote from '@/components/Quote/Quote';
 
-export default function Home() {
+
+export default async function Home() {
+  const pageData = await fetchData();
+    
   return (
     <main className={styles.main}>
-      <Quote></Quote>
-      <Carousel>
-        <NavCard
-          title="title"
-          description="Apor är roliga husdjur och kan lära sig att spela gitarr"
-          link={'/contact'}
-          linktitle="Kontakta oss ->"
-          image="/image/yes.jpg"
-        />
-        <NavCard
-          title=" second title"
-          description="Tigrar är roliga husdjur och kan lära sig att spela gitarr"
-          link={'/contact'}
-          linktitle="konsult ->"
-          image="/image/perhapsjpg.jpg"
-        />
-        <NavCard
-          title="third title"
-          description="Myrslook är roliga husdjur och kan lära sig att spela gitarr"
-          link={'/contact'}
-          linktitle="filantropi ->"
-          image="./image/first-law.jpg"
-        />
-      </Carousel>
+
+      <h1>{pageData.title}</h1>
     </main>
   );
+}
+
+// TODO:: make safer
+export async function fetchData() {
+  let pageData = [];
+
+  try {
+    pageData = await client.fetch(
+      "*[_type == 'page' && slug.current=='home-page']"
+    );
+
+    pageData = pageData.pop();
+  } catch (error) {
+    console.error(error);
+  }
+
+  return pageData;
 }
