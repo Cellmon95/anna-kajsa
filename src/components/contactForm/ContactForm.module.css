@@ -4,8 +4,9 @@
   align-items: center;
   gap: 1rem;
   justify-content: center;
-  width: 25rem;
+  max-width: 25rem;
   height: auto;
+  margin: 0 10px;
 }
 
 .formWrapper {
