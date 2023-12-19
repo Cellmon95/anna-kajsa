@@ -4,12 +4,25 @@
   gap: 16px;
   font-size: 18px;
 }
+.collumns p {
+  font-size: 18px;
+}
 .footer {
   min-height: 200px;
   width: 100%;
   background-color: var(--background-home);
   display: flex;
+  flex-direction: column;
   padding-block: 32px;
   padding-inline: 16px;
+}
+.colContaier {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
+}
+.anna {
+  padding-bottom: 16px;
+  font-weight: bold;
+  color: white;
 }
