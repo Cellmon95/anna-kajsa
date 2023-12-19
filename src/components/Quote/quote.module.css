@@ -1,0 +1,23 @@
+.quoteWrapper{
+    color: var(--Text, #000);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+
+    background-color: #F8F8F8;
+    padding: 40px;
+}
+
+.quote{
+
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.author{
+    margin: 0;
+    padding: 0;
+}
