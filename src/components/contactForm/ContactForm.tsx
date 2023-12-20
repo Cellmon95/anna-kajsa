@@ -28,7 +28,7 @@ const ContactForm = () => {
         />
         <input
           type="email"
-          placeholder="example@gmail.com"
+          placeholder="Din egna email, ex: john@gmail.com"
           className={styles.input}
           value={email}
           onChange={(e) => {
