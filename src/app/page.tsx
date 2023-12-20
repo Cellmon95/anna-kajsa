@@ -5,11 +5,13 @@ import Quote from '@/components/Quote/Quote';
 import { client } from '../../sanity/lib/client';
 import HeroHome from '@/components/HeroHome/heroHome';
 
+
 export default async function Home() {
   const pageData = await fetchData();
 
   return (
     <main className={styles.main}>
+
       <h1>{pageData.title}</h1>
     </main>
   );
