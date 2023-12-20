@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import TitledParagraph from '@/components/TiltledParagraph/titledParagraph';
-import NavCard from '@/components/navcard/NavCard';
-import Carousel from '@/components/carousel/Carousel';
 import Quote from '@/components/Quote/Quote';
+import { client } from '../../sanity/lib/client';
+import HeroHome from '@/components/HeroHome/heroHome';
 
 
 export default async function Home() {
   const pageData = await fetchData();
-    
+
   return (
     <main className={styles.main}>
 
