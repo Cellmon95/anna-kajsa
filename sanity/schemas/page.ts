@@ -6,6 +6,7 @@ export const page = defineType({
   title: 'Page',
   fields: [
     defineField({name: 'title', type: 'string'}),
+    defineField({name: 'slug', type: 'slug'}),
     defineField({
       name: 'pageBuilder',
       type: 'array',
