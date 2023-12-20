@@ -1,14 +1,14 @@
-"use client";
-import styles from "./heroHome.module.css";
+'use client';
+import styles from './heroHome.module.css';
+interface HeroHomeProps {
+  heroParagraph: string;
+}
 
-export default function HeroHome() {
+export default function HeroHome(props: HeroHomeProps) {
   return (
     <>
       <section className={styles.hero}>
-        <p className={styles.heroParagraph}>
-          Speaking diffrently not arguing well is the chief instrument of social
-          change
-        </p>
+        <p className={styles.heroParagraph}>{props.heroParagraph}</p>
       </section>
     </>
   );
