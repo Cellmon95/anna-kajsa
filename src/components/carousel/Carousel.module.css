@@ -1,0 +1,26 @@
+.wrapper {
+  height: auto;
+  width: 100%;
+  background-color: hotpink;
+  display: flex;
+  overflow: hidden;
+}
+
+.carouselContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 10px;
+  padding: 10px;
+  background-color: #ff66c4;
+  overflow-x: scroll;
+}
+
+.item {
+  height: 200px;
+  width: 300px;
+  background-color: aqua;
+  border-radius: 10px;
+}
