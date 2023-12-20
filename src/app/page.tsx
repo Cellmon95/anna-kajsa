@@ -13,9 +13,22 @@ export default async function Home() {
   function buildComponent(componentJson: any) {
     switch (componentJson._type) {
       case "titledParagraph":
-        return <TitledParagraph backgroundColor="#ffffff"></TitledParagraph>;
+        return (
+          <TitledParagraph
+            backgroundColor="#ffffff"
+            heading={componentJson.heading}
+            content={componentJson.content}
+          ></TitledParagraph>
+        );
         break;
 
+      case "homePageHero":
+        return <HeroHome heroParagraph={componentJson.text}></HeroHome>;
+        break;
+
+      case "navCardCarousel":
+        return <Carousel children></Carousel>
+        break;
       default:
         break;
     }
@@ -23,9 +36,7 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      {pageBuilder.map((pageElement) => (
-        <h1>{pageElement._type}</h1>
-      ))}
+      {pageBuilder.map((pageElement) => buildComponent(pageElement))}
     </main>
   );
 }
