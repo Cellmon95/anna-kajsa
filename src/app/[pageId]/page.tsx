@@ -7,8 +7,9 @@ import HeroHome from "@/components/HeroHome/heroHome";
 import Carousel from "@/components/carousel/Carousel";
 
 export default async function Home({ params }: { params: { pageId: string } }) {
-  console.log(params);
-  const pageData = await fetchData(params.pageId);
+  const pageData = await client.fetch(
+    "*[_type == 'page' && slug.current=='" + params.pageId + "'][0]"
+  );
   const pageBuilder: any[] = pageData.pageBuilder;
 
   function buildComponent(componentJson: any) {
@@ -39,19 +40,16 @@ export default async function Home({ params }: { params: { pageId: string } }) {
   );
 }
 
-// TODO:: make safer
-export async function fetchData(slug: string) {
+export async function generateStaticParams() {
   let pageData = [];
 
   try {
-    pageData = await client.fetch(
-      "*[_type == 'page' && slug.current=='" + slug + "']"
-    );
-
-    pageData = pageData.pop();
+    pageData = await client.fetch("*[_type == 'page']");
   } catch (error) {
     console.error(error);
   }
 
-  return pageData;
+  return pageData.map((page: any) => ({
+    pageId: page.pageId,
+  }));
 }
