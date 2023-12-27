@@ -25,7 +25,6 @@ export default function Navbar() {
 
   function toggleScroll() {
     setBurgerMenuOpen(!burgerMenuOpen);
-    console.log(burgerMenuOpen);
     if (burgerMenuOpen == false) {
       document.body.style.overflowY = 'hidden';
     } else {
