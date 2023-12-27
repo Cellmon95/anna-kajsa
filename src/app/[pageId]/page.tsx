@@ -4,7 +4,7 @@ import TitledParagraph from "@/components/TiltledParagraph/titledParagraph";
 import Quote from "@/components/Quote/Quote";
 import { client } from "../../../sanity/lib/client";
 import HeroHome from "@/components/HeroHome/heroHome";
-import Carousel from "@/components/carousel/Carousel";
+import Carousel from "@/components/garousel/Carousel";
 
 export default async function Home({ params }: { params: { pageId: string } }) {
   const pageData = await client.fetch(
