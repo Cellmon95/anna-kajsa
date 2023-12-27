@@ -5,38 +5,19 @@ import Quote from "@/components/Quote/Quote";
 import { client } from "../../../sanity/lib/client";
 import HeroHome from "@/components/HeroHome/heroHome";
 import Carousel from "@/components/carousel/Carousel";
+import PageBuilder from "@/components/PageBuilder/PageBuilder";
 
 export default async function Home({ params }: { params: { pageId: string } }) {
   const pageData = await client.fetch(
     "*[_type == 'page' && slug.current=='" + params.pageId + "'][0]"
   );
-  const pageBuilder: any[] = pageData.pageBuilder;
 
-  function buildComponent(componentJson: any) {
-    switch (componentJson._type) {
-      case "titledParagraph":
-        return (
-          <TitledParagraph
-            backgroundColor="#ffffff"
-            heading={componentJson.heading}
-            content={componentJson.content}
-          ></TitledParagraph>
-        );
-
-      case "homePageHero":
-        return <HeroHome heroParagraph={componentJson.text}></HeroHome>;
-
-      case "navCardCarousel":
-        break;
-      default:
-        break;
-    }
-  }
+  const pageBuilderData = pageData.pageBuilder;
 
   return (
-    <main className={styles.main}>
-      {pageBuilder.map((pageElement) => buildComponent(pageElement))}
-    </main>
+    <>
+      <PageBuilder pageBuilderData={pageBuilderData}></PageBuilder>
+    </>
   );
 }
 

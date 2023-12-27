@@ -1,9 +1,9 @@
-import React from 'react';
-import styles from './NavCard.module.css';
-import Link from 'next/link';
-import { Url } from 'next/dist/shared/lib/router/router';
+import React from "react";
+import styles from "./NavCard.module.css";
+import Link from "next/link";
+import { Url } from "next/dist/shared/lib/router/router";
 
-interface NavCardProps {
+export interface NavCardProps {
   title: string;
   description: string;
   image?: string;
@@ -12,6 +12,7 @@ interface NavCardProps {
 }
 
 const NavCard = (props: NavCardProps) => {
+  console.log(props.title);
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>{props.title}</h1>
