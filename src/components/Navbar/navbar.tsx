@@ -6,7 +6,7 @@ import styles from './navbar.module.css';
 
 export default function Navbar() {
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
-  const [scrollDistans, setScrollDistans] = useState(1);
+  const [scrollDistans, setScrollDistans] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +25,8 @@ export default function Navbar() {
 
   function toggleScroll() {
     setBurgerMenuOpen(!burgerMenuOpen);
-    if (burgerMenuOpen == true) {
+    console.log(burgerMenuOpen);
+    if (burgerMenuOpen == false) {
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';
