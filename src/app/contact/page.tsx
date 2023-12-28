@@ -11,7 +11,6 @@ const Contact = () => {
         title="hej"
         description="lorem ipsum hejsan hoppsan jakfkajfökjsdhfjsd mcmkmcklsmflksmfklsmfklsdmkllllllllllllhhhhhhwkjfklwjflkwjfkwejflkwejflw hejsan"
         image="/image/yes.jpg"
-        link={'/consult'}
       />
     </div>
   );
