@@ -1,12 +1,25 @@
-.wrapper {
+.btn {
+  min-height: 31.938rem; /*  510px */
+  min-width: 19.438rem; /* 311px */
+  max-width: 19.438rem; /* 311px */
   background-color: #ffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper {
+  /* background-color: #ffff; */
+  /* background-color: red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
   height: 100%;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 10px; */
 }
 
 .textColor {
@@ -18,22 +31,24 @@
   margin-top: 1rem;
 }
 
-.btn {
-  height: 31.938rem; /*  510px */
-  min-width: 19.438rem; /* 311px */
-  background-color: #ffff;
-  border-radius: 10px;
-}
-
-.description {
-  padding: 0 10px;
-}
-
 .infoContainer {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
+  word-wrap: break-word;
+  text-wrap: balance;
+  background-color: blue;
 }
+
+.p {
+  height: 100%;
+  width: 100%;
+  text-wrap: wrap;
+  /* text-overflow: ellipsis;
+  overflow: hidden; */
+}
+
 .img {
   margin-top: 1rem;
   height: 150px;
