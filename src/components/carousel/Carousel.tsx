@@ -5,7 +5,7 @@ import NavCard from "../navcard/NavCard";
 import { NavCardProps } from "../navcard/NavCard";
 
 interface CarouselProps {
-  children: any;
+  childre: any;
 }
 
 const Carousel = (props: CarouselProps) => {
@@ -14,7 +14,7 @@ const Carousel = (props: CarouselProps) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.carouselContainer}>
-        {props.children.map((child: any) => {
+        {props.childre.map((child: any) => {
           const navCardData: NavCardProps = {
             description: child.description,
             title: child.title,
@@ -23,7 +23,7 @@ const Carousel = (props: CarouselProps) => {
             link: "/",
             linktitle: "test",
           };
-          return <NavCard {...navCardData}></NavCard>;
+          return <NavCard key={child._key} {...navCardData}></NavCard>;
         })}
         {/* <div className={styles.item}>Item</div>
         <div className={styles.item}>Item</div> */}

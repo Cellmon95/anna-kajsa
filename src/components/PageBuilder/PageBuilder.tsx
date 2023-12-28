@@ -53,7 +53,7 @@ function buildComponent(schemaBlocktData: any) {
       return (
         <Carousel
           key={schemaBlocktData._key}
-          children={schemaBlocktData.content}
+          childre={schemaBlocktData.content}
         ></Carousel>
       );
       break;
