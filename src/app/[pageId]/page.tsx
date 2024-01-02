@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+import Image from "next/image";
+import styles from "./page.module.css";
+import TitledParagraph from "@/components/TiltledParagraph/titledParagraph";
+import Quote from "@/components/Quote/Quote";
+import { client } from "../../../sanity/lib/client";
+import HeroHome from "@/components/HeroHome/heroHome";
+import Carousel from "@/components/carousel/Carousel";
+import PageBuilder from "@/components/PageBuilder/PageBuilder";
+
+export default async function Home({ params }: { params: { pageId: string } }) {
+  const pageData = await client.fetch(
+    "*[_type == 'page' && slug.current=='" + params.pageId + "'][0]"
+  );
+
+  const pageBuilderData = pageData.pageBuilder;
+=======
 import styles from './page.module.css';
 import TitledParagraph from '@/components/TiltledParagraph/titledParagraph';
 import HeroHome from '@/components/HeroHome/heroHome';
@@ -27,11 +44,12 @@ export default async function Home({ params }: { params: { pageId: string } }) {
         break;
     }
   }
+>>>>>>> main
 
   return (
-    <main className={styles.main}>
-      {pageBuilder.map((pageElement) => buildComponent(pageElement))}
-    </main>
+    <>
+      <PageBuilder pageBuilderData={pageBuilderData}></PageBuilder>
+    </>
   );
 }
 
