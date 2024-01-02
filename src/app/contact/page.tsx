@@ -11,12 +11,12 @@ const Contact = () => {
       <PostCard
         title="hej"
         description="lorem ipsum hejsan hoppsan jakfkajfökjsdhfjsd mcmkmcklsmflksmfklsmfklsdmkllllllllllllhhhhhhwkjfklwjflkwjfkwejflkwejflw hejsan"
-        image="/image/yes.jpg"
+        image="/image/nature.jpeg"
       />
       <NavCard
         title="tja"
         description="lorem ipsum hejsan hoppsan jakfkajfökjsdhfjsd mcmkmcklsmflksmfklsmfklsdmkllllllllllllhhhhhhwkjfklwjflkwjfkwejflkwejflw hejsan hejsan"
-        image="/image/yes.jpg"
+        image="/image/nature.jpeg"
         link="/"
       />
     </div>
