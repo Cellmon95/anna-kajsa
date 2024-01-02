@@ -16,7 +16,7 @@ const NavCard = (props: NavCardProps) => {
     <div className={styles.wrapper}>
       <h1 className={styles.title}>{props.title}</h1>
       <div className={styles.infoContainer}>
-        <p>{props.description}</p>
+        <p className={styles.p}>{props.description}</p>
         <img className={styles.img} src={props.image} alt="cover image" />
         <div className={styles.linkContainer}>
           {/* TODO: Remove ts ignore */}
