@@ -1,8 +1,8 @@
 "use client";
 
+import Carousel from "../Carousel/Carousel";
 import HeroHome from "../HeroHome/heroHome";
 import TitledParagraph from "../TiltledParagraph/titledParagraph";
-import Carousel from "../carousel/Carousel";
 
 interface PageBuilderProps {
   pageBuilderData: any;
