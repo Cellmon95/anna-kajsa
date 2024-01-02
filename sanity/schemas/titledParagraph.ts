@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export const titledParagraph = defineType({
   name: 'titledParagraph',
@@ -13,5 +13,9 @@ export const titledParagraph = defineType({
       name: 'content',
       type: 'string',
     }),
+    defineField({
+      name: 'backgroundColor',
+      type: 'string',
+    }),
   ],
-})
+});

@@ -1,8 +1,10 @@
-"use client";
+'use client';
 
-import Carousel from "../Carousel/Carousel";
-import HeroHome from "../HeroHome/heroHome";
-import TitledParagraph from "../TiltledParagraph/titledParagraph";
+import Carousel from '../Carousel/Carousel';
+import HeroHome from '../HeroHome/heroHome';
+import HeroOther from '../HeroOther/HeroOther';
+import Quote from '../Quote/Quote';
+import TitledParagraph from '../TiltledParagraph/titledParagraph';
 
 interface PageBuilderProps {
   pageBuilderData: any;
@@ -31,7 +33,7 @@ export default function PageBuilder(props: PageBuilderProps) {
  */
 function buildComponent(schemaBlocktData: any) {
   switch (schemaBlocktData._type) {
-    case "titledParagraph":
+    case 'titledParagraph':
       return (
         <TitledParagraph
           key={schemaBlocktData._key}
@@ -41,22 +43,36 @@ function buildComponent(schemaBlocktData: any) {
         ></TitledParagraph>
       );
 
-    case "homePageHero":
+    case 'homePageHero':
       return (
         <HeroHome
           key={schemaBlocktData._key}
           heroParagraph={schemaBlocktData.text}
         ></HeroHome>
       );
+    case 'otherPageHero':
+      return (
+        <HeroOther
+          key={schemaBlocktData._key}
+          image={schemaBlocktData.backgroundImage}
+        ></HeroOther>
+      );
 
-    case "navCardCarousel":
+    case 'navCardCarousel':
       return (
         <Carousel
           key={schemaBlocktData._key}
           childre={schemaBlocktData.content}
         ></Carousel>
       );
-      break;
+    case 'quote':
+      return (
+        <Quote
+          key={schemaBlocktData._key}
+          quote={schemaBlocktData.content}
+          author={schemaBlocktData.author}
+        ></Quote>
+      );
     default:
       break;
   }

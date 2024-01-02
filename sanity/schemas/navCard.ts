@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from 'sanity';
 
 /*
   title: string;
@@ -10,29 +10,29 @@ import { defineField, defineType } from "sanity";
 */
 
 export const navCard = defineType({
-  name: "navCard",
-  type: "object",
-  title: "Nav Card",
+  name: 'navCard',
+  type: 'object',
+  title: 'Nav Card',
   fields: [
     defineField({
-      name: "title",
-      type: "string",
+      name: 'title',
+      type: 'string',
     }),
     defineField({
-      name: "description",
-      type: "string",
+      name: 'description',
+      type: 'string',
     }),
     defineField({
-      name: "image",
-      type: "image",
+      name: 'image',
+      type: 'image',
     }),
     defineField({
-      name: "linktitle",
-      type: "string",
+      name: 'linktitle',
+      type: 'string',
     }),
     defineField({
-      name: "link",
-      type: "url",
+      name: 'link',
+      type: 'url',
     }),
   ],
 });
