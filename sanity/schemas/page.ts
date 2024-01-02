@@ -21,8 +21,16 @@ export const page = defineType({
           type: 'homePageHero',
         }),
         defineArrayMember({
+          name: 'otherPageHero',
+          type: 'otherPageHero',
+        }),
+        defineArrayMember({
           name: 'navCardCarousel',
           type: 'navCardCarousel',
+        }),
+        defineArrayMember({
+          name: 'quote',
+          type: 'quote',
         }),
       ],
     }),

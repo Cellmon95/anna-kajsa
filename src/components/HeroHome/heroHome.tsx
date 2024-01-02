@@ -1,5 +1,7 @@
 'use client';
 import styles from './heroHome.module.css';
+import type { Image } from 'sanity';
+
 interface HeroHomeProps {
   heroParagraph: string;
 }

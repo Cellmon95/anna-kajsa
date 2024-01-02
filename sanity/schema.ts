@@ -1,10 +1,12 @@
-import { type SchemaTypeDefinition } from "sanity";
-import { page } from "./schemas/page";
-import { titledParagraph } from "./schemas/titledParagraph";
-import { footer } from "./schemas/footer";
-import { homePageHero } from "./schemas/homePageHero";
-import { navCard } from "./schemas/navCard";
-import { navCardCarousel } from "./schemas/navCardCarousel";
+import { type SchemaTypeDefinition } from 'sanity';
+import { page } from './schemas/page';
+import { titledParagraph } from './schemas/titledParagraph';
+import { footer } from './schemas/footer';
+import { homePageHero } from './schemas/homePageHero';
+import { navCard } from './schemas/navCard';
+import { navCardCarousel } from './schemas/navCardCarousel';
+import { quote } from './schemas/quote';
+import { otherPageHero } from './schemas/otherPageHero';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -14,5 +16,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     homePageHero,
     navCard,
     navCardCarousel,
+    quote,
+    otherPageHero,
   ],
 };
