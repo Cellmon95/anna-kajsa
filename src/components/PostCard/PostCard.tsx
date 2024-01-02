@@ -15,7 +15,7 @@ const PostCard = (props: PostCardProps) => {
   return (
     <button
       onClick={() => {
-        // will probably change to something like [page]/[post]
+        // will probably change to something like '/work/projects/' + slug
         router.push('/consult');
       }}
       className={styles.btn}
