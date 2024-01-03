@@ -32,6 +32,14 @@ export const page = defineType({
           name: 'quote',
           type: 'quote',
         }),
+        defineArrayMember({
+          name: 'photo',
+          type: 'photo',
+        }),
+        defineArrayMember({
+          name: 'postCard',
+          type: 'postCard',
+        }),
       ],
     }),
   ],

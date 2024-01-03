@@ -7,6 +7,8 @@ import { navCard } from './schemas/navCard';
 import { navCardCarousel } from './schemas/navCardCarousel';
 import { quote } from './schemas/quote';
 import { otherPageHero } from './schemas/otherPageHero';
+import { photo } from './schemas/photo';
+import { postCard } from './schemas/postCard';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -18,5 +20,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     navCardCarousel,
     quote,
     otherPageHero,
+    photo,
+    postCard
   ],
 };
