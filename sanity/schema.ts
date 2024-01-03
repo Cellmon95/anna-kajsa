@@ -9,6 +9,7 @@ import { quote } from './schemas/quote';
 import { otherPageHero } from './schemas/otherPageHero';
 import { photo } from './schemas/photo';
 import { postCard } from './schemas/postCard';
+import blogPost from './schemas/blogpost';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -21,6 +22,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     quote,
     otherPageHero,
     photo,
-    postCard
+    postCard,
+    blogPost,
   ],
 };
