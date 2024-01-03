@@ -9,7 +9,7 @@ import { quote } from './schemas/quote';
 import { otherPageHero } from './schemas/otherPageHero';
 import { photo } from './schemas/photo';
 import { postCard } from './schemas/postCard';
-import blogPost from './schemas/blogpost';
+import blogPost from './schemas/blogPost';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [

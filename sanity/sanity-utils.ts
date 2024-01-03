@@ -20,6 +20,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     _createdAt,
     "slug": slug.current,
     "image": image.asset->url,
+    "alt": image.alt,
     content
   }`);
 }
@@ -32,6 +33,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost> {
       _createdAt,
       "slug": slug.current,
       "image": image.asset->url,
+      "alt": image.alt,
       content
     }`,
     { slug }

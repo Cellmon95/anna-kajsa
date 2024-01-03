@@ -17,14 +17,13 @@ export default async function BlogPostPage({
   params: { slug: string };
 }) {
   const blogPost = await getBlogPost(params.slug);
-  console.log(blogPost);
 
   return (
     <>
       <Image
         className={styles.hero}
         src={blogPost.image}
-        alt="bricks hard"
+        alt={blogPost.alt}
         width={1920}
         height={1080}
       />
