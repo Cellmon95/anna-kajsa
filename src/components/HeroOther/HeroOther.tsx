@@ -9,7 +9,7 @@ interface HeroHomeProps {
 
 export default function HeroOther(props: HeroHomeProps) {
   const imgUrl = urlForImage(props.image);
-  console.log(imgUrl);
+
   return (
     <>
       <section

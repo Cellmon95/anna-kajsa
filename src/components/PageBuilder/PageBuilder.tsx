@@ -1,8 +1,11 @@
 'use client';
 
+import { urlForImage } from '../../../sanity/lib/image';
 import Carousel from '../Carousel/Carousel';
 import HeroHome from '../HeroHome/heroHome';
 import HeroOther from '../HeroOther/HeroOther';
+import Photo from '../Photo/Photo';
+import PostCard from '../PostCard/PostCard';
 import Quote from '../Quote/Quote';
 import TitledParagraph from '../TiltledParagraph/titledParagraph';
 
@@ -73,6 +76,22 @@ function buildComponent(schemaBlocktData: any) {
           author={schemaBlocktData.author}
         ></Quote>
       );
+
+    case 'photo':
+      return (
+        <Photo img={schemaBlocktData.img} alt={schemaBlocktData.name}></Photo>
+      );
+
+    case 'postCard':
+      return (
+        <PostCard
+          key={schemaBlocktData._key}
+          description={schemaBlocktData.description}
+          title={schemaBlocktData.title}
+          image={urlForImage(schemaBlocktData.img)}
+        ></PostCard>
+      );
+
     default:
       break;
   }

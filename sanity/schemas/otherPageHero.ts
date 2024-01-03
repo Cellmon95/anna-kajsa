@@ -13,6 +13,9 @@ export const otherPageHero = defineType({
       name: 'backgroundImage',
       title: 'Background Image',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
   ],
 });
