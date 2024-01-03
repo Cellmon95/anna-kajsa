@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getBlogPost, getBlogPosts } from '../../../../../sanity/sanity-utils';
 import { PortableText } from '@portabletext/react';
+import styles from './page.module.css';
 
 export async function generateStaticParams() {
   const blogPosts = await getBlogPosts();
@@ -20,9 +21,17 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <Image src={blogPost.image} alt="bricks hard" width={600} height={600} />
-      <h3>{blogPost.name}</h3>
-      <PortableText value={blogPost.content} />
+      <Image
+        className={styles.hero}
+        src={blogPost.image}
+        alt="bricks hard"
+        width={1920}
+        height={1080}
+      />
+      <div className={styles.contentContainer}>
+        <h2>{blogPost.name}</h2>
+        <PortableText value={blogPost.content} />
+      </div>
     </>
   );
 }
