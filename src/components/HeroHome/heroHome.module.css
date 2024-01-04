@@ -3,13 +3,13 @@
   height: 100vh;
   background-image: url("./hero_img_croped.png");
   object-fit: cover;
+  display: flex;flex-direction: column-reverse;
 }
 
 .heroParagraph {
-  position: absolute;
-  bottom: 15%;
-  margin: 0 30% 0 2%;
-
+  padding-bottom: 25vh;
+  padding-left: 2vw;
+  padding-right: 15vw;
   color: var(--Background, #fff);
   font-size: 20px;
   font-style: normal;

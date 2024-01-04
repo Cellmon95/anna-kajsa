@@ -12,7 +12,6 @@ export interface NavCardProps {
 }
 
 const NavCard = (props: NavCardProps) => {
-  console.log(props.title);
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>{props.title}</h1>

@@ -61,30 +61,26 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
-          <Link
-            className={styles.links}
-            onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
-            href={'/'}
-          >
+          <Link className={styles.links} onClick={toggleScroll} href={'/'}>
             Home
           </Link>
           <Link
             className={styles.links}
-            onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
+            onClick={toggleScroll}
             href={'/consult'}
           >
             consulting work
           </Link>
           <Link
             className={styles.links}
-            onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
-            href={'/philanthrophy'}
+            onClick={toggleScroll}
+            href={'/philantropy'}
           >
             philanthropic work
           </Link>
           <Link
             className={`${styles.lastLink} ${styles.links}`}
-            onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
+            onClick={toggleScroll}
             href={'/creative'}
           >
             Creative work
