@@ -8,6 +8,10 @@ const imageBuilder = createImageUrlBuilder({
   dataset: dataset || '',
 });
 
-export const urlForImage = (source: Image) => {
+export const urlForImage = (
+  source: Image,
+  focalPointX: number,
+  focalPointY: number
+) => {
   return imageBuilder?.image(source).auto('format').fit('crop').url();
 };

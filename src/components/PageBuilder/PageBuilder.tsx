@@ -88,7 +88,11 @@ function buildComponent(schemaBlocktData: any) {
           key={schemaBlocktData._key}
           description={schemaBlocktData.description}
           title={schemaBlocktData.title}
-          image={urlForImage(schemaBlocktData.img)}
+          image={urlForImage(
+            schemaBlocktData.img,
+            schemaBlocktData.img.hotspot.x,
+            schemaBlocktData.img.hotspot.y
+          )}
         ></PostCard>
       );
 
