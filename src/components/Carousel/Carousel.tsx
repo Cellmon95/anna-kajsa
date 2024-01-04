@@ -9,7 +9,6 @@ interface CarouselProps {
 }
 
 const Carousel = (props: CarouselProps) => {
-  console.log("props.children");
 
   return (
     <div className={styles.wrapper}>
