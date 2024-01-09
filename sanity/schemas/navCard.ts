@@ -30,7 +30,7 @@ export const navCard = defineType({
       },
     }),
     defineField({
-      name: 'linktitle',
+      name: 'linkTitle',
       type: 'string',
     }),
     defineField({

@@ -9,11 +9,7 @@ interface HeroHomeProps {
 
 export default function HeroOther(props: HeroHomeProps) {
   console.log(props.image.hotspot);
-  const imgUrl = urlForImage(
-    props.image,
-    props.image.hotspot?.x || 0,
-    props.image.hotspot?.y || 0
-  );
+  const imgUrl = urlForImage(props.image);
 
   return (
     <>
