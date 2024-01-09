@@ -19,6 +19,7 @@ const Carousel = (props: CarouselProps) => {
             image: child.image,
             link: '/',
             linktitle: child.linkTitle,
+            linkColor: child.linkColor.hex || '#ffffff',
           };
           return <NavCard key={child._key} {...navCardData}></NavCard>;
         })}

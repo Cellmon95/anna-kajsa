@@ -37,5 +37,9 @@ export const navCard = defineType({
       name: 'link',
       type: 'url',
     }),
+    defineField({
+      name: 'linkColor',
+      type: 'color',
+    }),
   ],
 });

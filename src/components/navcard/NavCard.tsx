@@ -11,10 +11,15 @@ export interface NavCardProps {
   image: Image;
   link?: string | Url;
   linktitle?: string;
+  linkColor: string;
 }
 
 const NavCard = (props: NavCardProps) => {
   const imageUrl = urlForImage(props.image);
+
+  const linkContainerColor: React.CSSProperties = {
+    backgroundColor: props.linkColor,
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -22,7 +27,7 @@ const NavCard = (props: NavCardProps) => {
       <div className={styles.infoContainer}>
         <p className={styles.p}>{props.description}</p>
         <img className={styles.img} src={imageUrl} alt={props.title} />
-        <div className={styles.linkContainer}>
+        <div className={styles.linkContainer} style={linkContainerColor}>
           {/* TODO: Remove ts ignore */}
           {/* @ts-ignore */}
           <Link className={styles.textColor} href={props.link}>

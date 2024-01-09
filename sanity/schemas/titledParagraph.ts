@@ -15,7 +15,7 @@ export const titledParagraph = defineType({
     }),
     defineField({
       name: 'backgroundColor',
-      type: 'string',
+      type: 'color',
     }),
   ],
 });
