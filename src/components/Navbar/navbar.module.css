@@ -17,11 +17,11 @@
   width: 100%;
   position: relative;
   overflow-x: clip;
-  background-color: white;
-}
-.navWrapperActive {
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
+}
+.navWrapperActive {
+  background-color: white;
 }
 .motionNav {
   display: flex;
