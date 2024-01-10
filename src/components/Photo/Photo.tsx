@@ -12,10 +12,15 @@ interface PhotoProps {
 
 export default function Photo(props: PhotoProps) {
   const imgUrl = urlForImage(props.img);
-
   return (
     <>
-      <Image src={imgUrl} alt={props.alt} width={412} height={500}></Image>
+      <Image
+        src={imgUrl}
+        alt={props.alt}
+        height={500}
+        width={375}
+        style={{ width: '100%' }}
+      ></Image>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export const navCardCarousel = defineType({
   name: 'navCardCarousel',
@@ -6,9 +6,13 @@ export const navCardCarousel = defineType({
   title: 'Nav Card Carousel',
   fields: [
     defineField({
+      name: 'name',
+      type: 'string',
+    }),
+    defineField({
       name: 'content',
       type: 'array',
-      of: [{type: 'navCard'}],
+      of: [{ type: 'navCard' }],
     }),
   ],
-})
+});
