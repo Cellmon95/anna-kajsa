@@ -10,6 +10,7 @@ import { otherPageHero } from './schemas/otherPageHero';
 import { photo } from './schemas/photo';
 import { postCard } from './schemas/postCard';
 import blogPost from './schemas/blogPost';
+import { PostContainer } from './schemas/PostContainer';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -24,5 +25,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     photo,
     postCard,
     blogPost,
+    PostContainer,
   ],
 };

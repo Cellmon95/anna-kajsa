@@ -1,7 +1,7 @@
-'use client';
 import React from 'react';
 import styles from './PostCard.module.css';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 interface PostCardProps {
   title: string;
@@ -13,19 +13,13 @@ const PostCard = (props: PostCardProps) => {
   const router = useRouter();
 
   return (
-    <button
-      onClick={() => {
-        // will probably change to something like '/work/projects/' + slug
-        router.push('/consult');
-      }}
-      className={styles.btn}
-    >
+    <Link href={'/creative/blog-posts/brick'} className={styles.btn}>
       <h1 className={styles.title}>{props.title}</h1>
       <div className={styles.infoContainer}>
         <img className={styles.img} src={props.image} alt="post cover image" />
         <p className={styles.p}>{props.description}</p>
       </div>
-    </button>
+    </Link>
   );
 };
 

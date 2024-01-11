@@ -40,6 +40,10 @@ export const page = defineType({
           name: 'postCard',
           type: 'postCard',
         }),
+        defineArrayMember({
+          name: 'PostContainer',
+          type: 'PostContainer',
+        }),
       ],
     }),
   ],
