@@ -69,14 +69,14 @@ export default function Navbar() {
             onClick={toggleScroll}
             href={'/consult'}
           >
-            consulting work
+            Consulting work
           </Link>
           <Link
             className={styles.links}
             onClick={toggleScroll}
             href={'/philantropy'}
           >
-            philanthropic work
+            Philanthropic work
           </Link>
           <Link
             className={`${styles.lastLink} ${styles.links}`}

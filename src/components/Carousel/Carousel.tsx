@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode } from 'react';
+import { Children, ReactNode } from 'react';
 import styles from './Carousel.module.css';
 import NavCard from '../navcard/NavCard';
 import { NavCardProps } from '../navcard/NavCard';
@@ -9,6 +9,7 @@ interface CarouselProps {
 }
 
 const Carousel = (props: CarouselProps) => {
+  console.log(props.childre);
   return (
     <div className={styles.wrapper}>
       <div className={styles.carouselContainer}>
@@ -19,7 +20,7 @@ const Carousel = (props: CarouselProps) => {
             image: child.image,
             link: '/',
             linktitle: child.linkTitle,
-            linkColor: child.linkColor.hex || '#ffffff',
+            linkColor: child.linkCalor || '#ffffff',
           };
           return <NavCard key={child._key} {...navCardData}></NavCard>;
         })}
