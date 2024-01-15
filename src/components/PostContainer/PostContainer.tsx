@@ -1,6 +1,7 @@
 import Carousel from '../Carousel/Carousel';
 import PostCard from '../PostCard/PostCard';
 import { getBlogPosts, getBlogPost } from '../../../sanity/sanity-utils';
+import GeneralCarousel from '../GeneralCarousel/GeneralCarousel';
 
 export async function generateStaticParams() {
   const blogCards = await getBlogPosts();
@@ -10,10 +11,11 @@ export async function generateStaticParams() {
 
 export default async function PostContainer() {
   const blogCards = await generateStaticParams(); // Declare blogCards variable
+  console.log(blogCards);
 
   return (
     <div>
-      <Carousel>
+      <GeneralCarousel>
         {blogCards.map((card) => (
           <PostCard
             key={card.slug}
@@ -22,7 +24,7 @@ export default async function PostContainer() {
             description={'description'}
           />
         ))}
-      </Carousel>
+      </GeneralCarousel>
     </div>
   );
 }

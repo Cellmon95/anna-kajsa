@@ -11,6 +11,7 @@ import { photo } from './schemas/photo';
 import { postCard } from './schemas/postCard';
 import blogPost from './schemas/blogPost';
 import { PostContainer } from './schemas/PostContainer';
+import { GeneralCarousel } from './schemas/GeneralCarousel';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -26,5 +27,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     postCard,
     blogPost,
     PostContainer,
+    GeneralCarousel,
   ],
 };

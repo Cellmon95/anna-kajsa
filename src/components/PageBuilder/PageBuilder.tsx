@@ -9,6 +9,7 @@ import PostCard from '../PostCard/PostCard';
 import Quote from '../Quote/Quote';
 import TitledParagraph from '../TiltledParagraph/titledParagraph';
 import PostContainer from '../PostContainer/PostContainer';
+import GeneralCarousel from '../GeneralCarousel/GeneralCarousel';
 
 interface PageBuilderProps {
   pageBuilderData: any;
@@ -95,6 +96,14 @@ function buildComponent(schemaBlocktData: any) {
 
     case 'PostContainer':
       return <PostContainer key={schemaBlocktData._key}></PostContainer>;
+
+    case 'GeneralCarousel':
+      return (
+        <GeneralCarousel
+          key={schemaBlocktData._key}
+          children={schemaBlocktData.content}
+        ></GeneralCarousel>
+      );
 
     default:
       break;

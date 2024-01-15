@@ -44,6 +44,10 @@ export const page = defineType({
           name: 'PostContainer',
           type: 'PostContainer',
         }),
+        defineArrayMember({
+          name: 'GeneralCarousel',
+          type: 'GeneralCarousel',
+        }),
       ],
     }),
   ],
