@@ -25,14 +25,21 @@ export const navCard = defineType({
     defineField({
       name: 'image',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
-      name: 'linktitle',
+      name: 'linkTitle',
       type: 'string',
     }),
     defineField({
       name: 'link',
       type: 'url',
+    }),
+    defineField({
+      name: 'linkCalor',
+      type: 'string',
     }),
   ],
 });

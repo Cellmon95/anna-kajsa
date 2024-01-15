@@ -33,33 +33,41 @@ export default function PageBuilder(props: PageBuilderProps) {
 
 /**
  * Builds Sanity schema components from schema block data.
- * @param schemaBlocktData Json data from a Sanity schema block.
+ * @param schemaBlockData Json data from a Sanity schema block.
  * @returns A Sanity schema component.
  */
-function buildComponent(schemaBlocktData: any) {
-  switch (schemaBlocktData._type) {
+function buildComponent(schemaBlockData: any) {
+  switch (schemaBlockData._type) {
     case 'titledParagraph':
+      //make sure backgroundColor have a value
+      let backgroundColor = '';
+      if (schemaBlockData.backgroundColor !== undefined) {
+        backgroundColor = schemaBlockData.backgroundColor.hex || '#ffffff';
+      } else {
+        backgroundColor = '#ffffff';
+      }
+
       return (
         <TitledParagraph
-          key={schemaBlocktData._key}
-          backgroundColor="#ffffff"
-          heading={schemaBlocktData.heading}
-          content={schemaBlocktData.content}
+          key={schemaBlockData._key}
+          backgroundColor={backgroundColor}
+          heading={schemaBlockData.heading}
+          content={schemaBlockData.content}
         ></TitledParagraph>
       );
 
     case 'homePageHero':
       return (
         <HeroHome
-          key={schemaBlocktData._key}
-          heroParagraph={schemaBlocktData.text}
+          key={schemaBlockData._key}
+          heroParagraph={schemaBlockData.text}
         ></HeroHome>
       );
     case 'otherPageHero':
       return (
         <HeroOther
-          key={schemaBlocktData._key}
-          image={schemaBlocktData.backgroundImage}
+          key={schemaBlockData._key}
+          image={schemaBlockData.backgroundImage}
         ></HeroOther>
       );
 
@@ -73,24 +81,24 @@ function buildComponent(schemaBlocktData: any) {
     case 'quote':
       return (
         <Quote
-          key={schemaBlocktData._key}
-          quote={schemaBlocktData.content}
-          author={schemaBlocktData.author}
+          key={schemaBlockData._key}
+          quote={schemaBlockData.content}
+          author={schemaBlockData.author}
         ></Quote>
       );
 
     case 'photo':
       return (
-        <Photo img={schemaBlocktData.img} alt={schemaBlocktData.name}></Photo>
+        <Photo img={schemaBlockData.img} alt={schemaBlockData.name}></Photo>
       );
 
     case 'postCard':
       return (
         <PostCard
-          key={schemaBlocktData._key}
-          description={schemaBlocktData.description}
-          title={schemaBlocktData.title}
-          image={urlForImage(schemaBlocktData.img)}
+          key={schemaBlockData._key}
+          description={schemaBlockData.description}
+          title={schemaBlockData.title}
+          image={urlForImage(schemaBlockData.img)}
         ></PostCard>
       );
 
