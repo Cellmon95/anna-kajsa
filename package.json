@@ -11,6 +11,7 @@
   "dependencies": {
     "@portabletext/react": "^3.0.11",
     "@sanity/color-input": "^3.1.0",
+    "@sanity/dashboard": "^3.1.6",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.21.3",
     "framer-motion": "^10.16.16",
@@ -21,6 +22,7 @@
     "react-hot-toast": "^2.4.1",
     "resend": "^2.1.0",
     "sanity": "^3.21.3",
+    "sanity-plugin-dashboard-widget-vercel": "^2.0.1",
     "styled-components": "^6.1.1",
     "zod": "^3.22.4"
   },
