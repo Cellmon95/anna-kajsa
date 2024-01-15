@@ -1,19 +1,18 @@
 'use client';
-import { Children, ReactNode } from 'react';
 import styles from './Carousel.module.css';
 import NavCard from '../navcard/NavCard';
 import { NavCardProps } from '../navcard/NavCard';
 
 interface CarouselProps {
-  childre: any;
+  children: any;
 }
 
 const Carousel = (props: CarouselProps) => {
-  console.log(props.childre);
   return (
     <div className={styles.wrapper}>
       <div className={styles.carouselContainer}>
-        {props.childre.map((child: any) => {
+        {/* {props.children} */}
+        {props.children.map((child: any) => {
           const navCardData: NavCardProps = {
             description: child.description,
             title: child.title,

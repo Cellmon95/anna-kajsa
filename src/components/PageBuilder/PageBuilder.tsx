@@ -8,6 +8,8 @@ import Photo from '../Photo/Photo';
 import PostCard from '../PostCard/PostCard';
 import Quote from '../Quote/Quote';
 import TitledParagraph from '../TiltledParagraph/titledParagraph';
+import PostContainer from '../PostContainer/PostContainer';
+import GeneralCarousel from '../GeneralCarousel/GeneralCarousel';
 
 interface PageBuilderProps {
   pageBuilderData: any;
@@ -72,8 +74,8 @@ function buildComponent(schemaBlockData: any) {
     case 'navCardCarousel':
       return (
         <Carousel
-          key={schemaBlockData._key}
-          childre={schemaBlockData.content}
+          key={schemaBlocktData._key}
+          children={schemaBlocktData.content}
         ></Carousel>
       );
     case 'quote':
@@ -98,6 +100,17 @@ function buildComponent(schemaBlockData: any) {
           title={schemaBlockData.title}
           image={urlForImage(schemaBlockData.img)}
         ></PostCard>
+      );
+
+    case 'PostContainer':
+      return <PostContainer key={schemaBlocktData._key}></PostContainer>;
+
+    case 'GeneralCarousel':
+      return (
+        <GeneralCarousel
+          key={schemaBlocktData._key}
+          children={schemaBlocktData.content}
+        ></GeneralCarousel>
       );
 
     default:
