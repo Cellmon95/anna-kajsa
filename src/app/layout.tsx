@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar/navbar';
 import Footer from '@/components/Footer/footer';
 import { Toaster } from 'react-hot-toast';
 
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
