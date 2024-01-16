@@ -7,7 +7,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
   const feedUrl = 'https://robinpersson.substack.com/feed';
   try {
     const feed = await parser.parseURL(feedUrl);
-    console.log('feed', feed);
     return new Response(JSON.stringify(feed), {
       status: 200,
       headers: {

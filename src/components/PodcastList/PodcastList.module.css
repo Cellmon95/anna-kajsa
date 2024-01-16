@@ -6,3 +6,11 @@
   height: 50px;
   background-color: white;
 }
+
+.postCardList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

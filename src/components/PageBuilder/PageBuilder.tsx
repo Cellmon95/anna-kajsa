@@ -100,6 +100,7 @@ function buildComponent(schemaBlockData: any) {
           description={schemaBlockData.description}
           title={schemaBlockData.title}
           image={urlForImage(schemaBlockData.img)}
+          url={'/'}
         ></PostCard>
       );
 

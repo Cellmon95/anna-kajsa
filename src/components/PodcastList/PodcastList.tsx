@@ -1,10 +1,11 @@
-'use client';
+import { getSubstackPosts } from '../../app/utils';
+import PostCard from '../PostCard/PostCard';
 
 import styles from './PodcastList.module.css';
 
-export default function PodcastList() {
+export default async function PodcastList() {
   //fetch data
-  
+  const data = await getSubstackPosts();
 
   return (
     <>
@@ -20,7 +21,16 @@ export default function PodcastList() {
           </div>
         </section>
 
-        <section></section>
+        <section className={styles.postCardList}>
+          {data.map((substackPost) => (
+            <PostCard
+              title={substackPost.title}
+              description={substackPost.desc}
+              image={substackPost.img}
+              url={substackPost.link}
+            ></PostCard>
+          ))}
+        </section>
       </section>
     </>
   );
