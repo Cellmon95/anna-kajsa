@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^0.4.1",
     "@portabletext/react": "^3.0.11",
     "@sanity/color-input": "^3.1.0",
     "@sanity/dashboard": "^3.1.6",
@@ -21,6 +22,7 @@
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
     "resend": "^2.1.0",
+    "rss-parser": "^3.13.0",
     "sanity": "^3.21.3",
     "sanity-plugin-dashboard-widget-vercel": "^2.0.1",
     "styled-components": "^6.1.1",

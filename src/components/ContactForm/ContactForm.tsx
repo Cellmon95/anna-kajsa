@@ -19,6 +19,7 @@ const ContactForm = () => {
     title: '',
     subject: '',
     content: '',
+    cloudflareStatus: '',
   });
 
   const [formError, setFormError] = useState({
@@ -48,6 +49,7 @@ const ContactForm = () => {
           title: '',
           subject: '',
           content: '',
+          cloudflareStatus: '',
         });
         setFormError({
           name: '',
@@ -148,6 +150,11 @@ const ContactForm = () => {
           }}
         ></textarea>
         <label htmlFor="content">{formError.content}</label>
+        {/* <Widget
+            onChange={(value: any) =>
+              setFormData({ ...formData, cloudflareStatus: value })
+            }
+          /> */}
         <button type="submit" className={styles.button}>
           Skicka
         </button>
