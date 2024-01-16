@@ -9,6 +9,7 @@ type email = {
   title: string;
   subject: string;
   content: string;
+  cloudflareStatus: string;
 };
 const formDataSchema = z.object({
   name: z.string().min(1),
@@ -23,21 +24,29 @@ export async function POST(request: any) {
   const formData: email = await request.json();
   if (formDataSchema.safeParse(formData).success) {
     try {
-      //@ts-ignore
-      const data = await resend.emails.send({
-        from: 'anna-kajsa-test <onboarding@anna-kajsa.se>',
-        to: [formData.email],
-        subject: formData.subject,
-        react: EmailTemplate({
-          name: formData.name,
-          email: formData.email,
-          content: formData.content,
-        }),
-      });
-      return NextResponse.json(
-        { message: 'Email sent successfully' },
-        { status: 200 }
-      );
+      if (formData.cloudflareStatus === 'success') {
+        //@ts-ignore
+        const data = await resend.emails.send({
+          from: 'anna-kajsa-test <onboarding@anna-kajsa.se>',
+          to: [formData.email],
+          subject: formData.subject,
+          react: EmailTemplate({
+            name: formData.name,
+            email: formData.email,
+            content: formData.content,
+          }),
+        });
+        return NextResponse.json(
+          { message: 'Email sent successfully' },
+          { status: 200 }
+        );
+      } else {
+      // to trick bots from spaming the client i guess dont realy know if it works
+        return NextResponse.json(
+          { message: 'Email sent successfully' },
+          { status: 200 }
+        );
+      }
     } catch (error) {
       return NextResponse.json(
         { message: 'Internal server error' },
