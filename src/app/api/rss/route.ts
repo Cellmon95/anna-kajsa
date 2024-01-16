@@ -3,15 +3,23 @@ import Parser from 'rss-parser';
 
 const parser = new Parser();
 
-export async function getFeed(req: NextRequest, res: NextResponse) {
+export async function GET(req: NextRequest, res: NextResponse) {
   const feedUrl = 'https://robinpersson.substack.com/feed';
   try {
     const feed = await parser.parseURL(feedUrl);
     console.log('feed', feed);
-    //@ts-ignore TODO: fix this
-    res.status(200).json(feed);
+    return new Response(JSON.stringify(feed), {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
   } catch (error) {
-    //@ts-ignore TODO: fix this
-    res.status(500).json({ message: 'Internal server error' });
+    return new Response(JSON.stringify({ message: 'Internal server error' }), {
+      status: 500,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
   }
 }
