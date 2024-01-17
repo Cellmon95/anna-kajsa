@@ -4,7 +4,7 @@ export default function Widget({ onChange }: { onChange: Function }) {
   return (
     <Turnstile
       style={{ display: 'none' }}
-      siteKey={'your site key'}
+      siteKey={'0x4AAAAAAAQLwcWoTaWbS5dR'}
       onError={() => {
         onChange('error');
       }}
