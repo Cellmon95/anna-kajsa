@@ -3,6 +3,7 @@ interface SubstackPost {
   link: string;
   img: string;
   desc: string;
+  pubDate: Date;
 }
 
 async function fetchSubstackData() {
@@ -28,6 +29,7 @@ export async function getSubstackPosts() {
       title: post.title,
       link: post.link,
       desc: post['content:encodedSnippet'],
+      pubDate: post.pubDate,
     };
 
     substackPosts.push(substackPost);

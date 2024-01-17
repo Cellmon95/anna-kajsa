@@ -116,7 +116,7 @@ function buildComponent(schemaBlockData: any) {
       );
 
     case 'podcastList':
-      return <PodcastList></PodcastList>;
+      return <PodcastList key={schemaBlockData._key}></PodcastList>;
 
     default:
       break;
