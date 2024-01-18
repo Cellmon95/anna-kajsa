@@ -10,6 +10,7 @@ import Quote from '../Quote/Quote';
 import TitledParagraph from '../TiltledParagraph/titledParagraph';
 import PostContainer from '../PostContainer/PostContainer';
 import GeneralCarousel from '../GeneralCarousel/GeneralCarousel';
+import PodcastList from '../PodcastList/PodcastList';
 
 interface PageBuilderProps {
   pageBuilderData: any;
@@ -74,8 +75,8 @@ function buildComponent(schemaBlockData: any) {
     case 'navCardCarousel':
       return (
         <Carousel
-          key={schemaBlocktData._key}
-          children={schemaBlocktData.content}
+          key={schemaBlockData._key}
+          children={schemaBlockData.content}
         ></Carousel>
       );
     case 'quote':
@@ -99,19 +100,23 @@ function buildComponent(schemaBlockData: any) {
           description={schemaBlockData.description}
           title={schemaBlockData.title}
           image={urlForImage(schemaBlockData.img)}
+          url={'/'}
         ></PostCard>
       );
 
     case 'PostContainer':
-      return <PostContainer key={schemaBlocktData._key}></PostContainer>;
+      return <PostContainer key={schemaBlockData._key}></PostContainer>;
 
     case 'GeneralCarousel':
       return (
         <GeneralCarousel
-          key={schemaBlocktData._key}
-          children={schemaBlocktData.content}
+          key={schemaBlockData._key}
+          children={schemaBlockData.content}
         ></GeneralCarousel>
       );
+
+    case 'podcastList':
+      return <PodcastList key={schemaBlockData._key}></PodcastList>;
 
     default:
       break;
