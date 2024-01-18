@@ -48,6 +48,10 @@ export const page = defineType({
           name: 'GeneralCarousel',
           type: 'GeneralCarousel',
         }),
+        defineArrayMember({
+          name: 'podcastList',
+          type: 'podcastList',
+        }),
       ],
     }),
   ],
