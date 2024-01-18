@@ -37,3 +37,15 @@ export async function getSubstackPosts() {
 
   return substackPosts;
 }
+
+export async function getSpotifyEpisodes() {
+  const res = await fetch('http://localhost:3000/api/spotify');
+
+  if (!res.ok) {
+    throw new Error('failed to fetch data.');
+  }
+
+  const spotifyJson = res.json();
+
+  return spotifyJson;
+}

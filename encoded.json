@@ -1,7 +1,0 @@
-{
-  "access_token": "BQCwOImnJLOni_gDM-Gq1vW2cknr_r-J2pny9F65hRvfZKsGtQZ0UJvlRusgYxV2O2S1PZYhAGM-6ZWe8Gx4Yki3L-klvozl4JYz82IzjE6qlszp7Z7Kuf5bXvsQ78GZVwP1gx3VQRJe06FNGXddvVk7p1oEn_zcZr5wbnIQc7SedFVWnau4hElGDYAC3K4Z8ryGUTFRJXs",
-  "token_type": "Bearer",
-  "expires_in": 3600,
-  "refresh_token": "AQBX1BiYpoFgqe91XNkTIUmPCUJbfkq60UQdyGByzBvcadLORfV8j2VxN4TS7pHO7joDL8ScF3vbpVQorSKc9BKTzjhmPcfAsGY2ug7spN2v63CgZ9AgW3Mg2FDoufVHzmI",
-  "scope": "user-read-playback-position"
-}
