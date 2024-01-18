@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react';
-import { getSubstackPosts } from '../../app/utils';
+import { getSubstackPosts, SubstackPost } from '../../app/utils';
 import PostCard from '../PostCard/PostCard';
 
 import styles from './PodcastList.module.css';
 
 export default function PodcastList() {
   //fetch data
-  const [postData, setPostData] = useState([]);
+  const [postData, setPostData] = useState<SubstackPost[]>([]);
+  let tmp: SubstackPost[] = [];
+
   useEffect(() => {
     getSubstackPosts().then((value) => {
       setPostData(value);
     });
-  });
+  }, []);
 
   function sortPostList(e: any) {
     const sortOption = document.getElementById(
@@ -20,26 +22,29 @@ export default function PodcastList() {
 
     switch (sortOption.value) {
       case 'newest':
-        const sort = postData.sort((a, b) => {
-          return (a > b) as unknown as number;
-        });
+        //const sort = postData.sort((a, b) => {
+        //return (a > b) as unknown as number;
+        //});
+        //setPostData([]);
         break;
 
       case 'alphabeticly':
-        setPostData(
-          postData.sort((a, b) => {
-            const aUpper = a.title.toUpperCase();
-            const bUpper = b.title.toUpperCase();
+        const sortedPostData = postData.sort((a, b) => {
+          const aUpper = a.title.toUpperCase();
+          const bUpper = b.title.toUpperCase();
 
-            if (aUpper > bUpper) {
-              return 1;
-            }
+          if (aUpper > bUpper) {
+            return 1;
+          }
 
-            if (aUpper < bUpper) {
-              return -1;
-            } else return 0;
-          })
-        );
+          if (aUpper < bUpper) {
+            return -1;
+          } else return 0;
+        });
+        sortedPostData.pop();
+
+        setPostData(sortedPostData);
+        console.log(postData);
         break;
       default:
         break;

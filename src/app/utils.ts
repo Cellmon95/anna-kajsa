@@ -1,4 +1,4 @@
-interface SubstackPost {
+export interface SubstackPost {
   title: string;
   link: string;
   img: string;
