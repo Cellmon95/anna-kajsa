@@ -1,17 +1,21 @@
-import { useEffect, useState } from 'react';
+import React, { KeyboardEventHandler, useEffect, useState } from 'react';
 import { getSubstackPosts, SubstackPost } from '../../app/utils';
 import PostCard from '../PostCard/PostCard';
 
 import styles from './PodcastList.module.css';
+import { text } from 'stream/consumers';
 
 export default function PodcastList() {
-  //fetch data
+  //the hook that updates the data that is displayed on site.
+  const [displayData, setDisplayData] = useState<SubstackPost[]>([]);
+
+  //the raw data fetched from the rss. Should be readonly!
   const [postData, setPostData] = useState<SubstackPost[]>([]);
-  let tmp: SubstackPost[] = [];
 
   useEffect(() => {
     getSubstackPosts().then((value) => {
       setPostData(value);
+      setDisplayData(value);
     });
   }, []);
 
@@ -20,42 +24,72 @@ export default function PodcastList() {
       'sortOption'
     ) as HTMLSelectElement;
 
+    let postDataCopy = [];
+
     switch (sortOption.value) {
       case 'newest':
-        //const sort = postData.sort((a, b) => {
-        //return (a > b) as unknown as number;
-        //});
-        //setPostData([]);
+        postDataCopy = [...postData];
+
+        postDataCopy.sort((a, b) => {
+          if (a > b) return 1;
+          if (a < b) return -1;
+          else return 0;
+        });
+
+        setDisplayData(postDataCopy);
+
         break;
 
       case 'alphabeticly':
-        const sortedPostData = postData.sort((a, b) => {
+        postDataCopy = [...postData];
+
+        postDataCopy.sort((a, b) => {
           const aUpper = a.title.toUpperCase();
           const bUpper = b.title.toUpperCase();
 
-          if (aUpper > bUpper) {
-            return 1;
-          }
-
-          if (aUpper < bUpper) {
-            return -1;
-          } else return 0;
+          if (aUpper > bUpper) return 1;
+          if (aUpper < bUpper) return -1;
+          else return 0;
         });
-        sortedPostData.pop();
 
-        setPostData(sortedPostData);
-        console.log(postData);
+        setDisplayData(postDataCopy);
+
         break;
       default:
         break;
     }
   }
 
+  function searchPostList(e: React.KeyboardEvent) {
+    const searchField = document.getElementById(
+      'searchField'
+    ) as HTMLInputElement;
+
+    const postDataCopy: SubstackPost[] = [...postData];
+    const tmpDisplayData: SubstackPost[] = [];
+    const searchString: string = searchField.value + e.key;
+
+    postDataCopy.forEach((post) => {
+      const postTitleUpper = post.title.toUpperCase();
+
+      if (postTitleUpper.search(searchString.toUpperCase()) !== -1) {
+        tmpDisplayData.push(post);
+      }
+
+      setDisplayData(tmpDisplayData);
+    });
+  }
+
   return (
     <>
       <section>
         <section className={styles.sortBar}>
-          <input type="text" placeholder="search"></input>
+          <input
+            type="text"
+            placeholder="search"
+            onKeyDown={searchPostList}
+            id="searchField"
+          ></input>
           <div>
             <label>Sort on: </label>
             <select name="sortOption" id="sortOption" onChange={sortPostList}>
@@ -66,7 +100,7 @@ export default function PodcastList() {
         </section>
 
         <section className={styles.postCardList}>
-          {postData.map((substackPost) => (
+          {displayData.map((substackPost) => (
             <PostCard
               title={substackPost.title}
               description={substackPost.desc}
