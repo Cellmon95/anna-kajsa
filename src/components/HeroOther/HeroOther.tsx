@@ -8,7 +8,9 @@ interface HeroHomeProps {
 }
 
 export default function HeroOther(props: HeroHomeProps) {
-  const imgUrl = urlForImage(props.image);
+  const innerWidth = window.innerWidth;
+
+  const imgUrl = urlForImage(props.image, 1920);
 
   return (
     <>

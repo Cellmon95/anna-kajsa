@@ -1,23 +1,33 @@
-.quoteWrapper{
-    color: var(--Text, #000);
-    text-align: center;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: normal;
+.quoteWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-    background-color: #F8F8F8;
-    padding: 40px;
+  background-color: #f8f8f8;
+  padding: 40px;
 }
 
-.quote{
-
-    padding-bottom: 20px;
-    margin: 0;
+.quote {
+  padding-bottom: 20px;
+  margin: 0;
+  color: var(--Text, #000);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.author{
-    margin: 0;
-    padding: 0;
+.author {
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .quote {
+    font-size: 20px;
+    max-width: 32rem;
+  }
 }

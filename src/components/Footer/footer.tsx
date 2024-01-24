@@ -10,7 +10,7 @@ export default function Footer() {
           <div className={styles.collumns}>
             <Link href={'/'}>Home</Link>
             <Link href={'/consult'}>Consult</Link>
-            <Link href={'/philanthropy'}>philanthropic</Link>
+            <Link href={'/philanthropy'}>Philanthropic</Link>
             <Link href={'/creative'}>Creative</Link>
             <Link href={'/contact'}>Contact</Link>
           </div>

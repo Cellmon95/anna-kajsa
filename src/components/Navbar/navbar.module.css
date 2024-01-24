@@ -33,7 +33,7 @@
   position: absolute;
   top: 0;
   left: 100%;
-  background-color: rgba(255, 255, 255, 0.15);
+  /*background-color: rgba(255, 255, 255, 0.15);*/
   backdrop-filter: blur(10px);
 }
 .buttonContainer {
@@ -59,12 +59,14 @@
     --x-to: 0%;
     --x-from: 0%;
   }
+
   .motionNav {
     flex-direction: row;
     width: fit-content;
     height: fit-content;
     position: static;
     gap: 2rem;
+    backdrop-filter: initial;
   }
   .iconButton {
     display: none;
