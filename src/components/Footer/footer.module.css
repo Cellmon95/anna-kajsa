@@ -1,28 +1,41 @@
 .collumns {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  font-size: 18px;
+  gap: 1rem;
+  font-size: 1.125rem;
+  width: 50%;
 }
 .collumns p {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .footer {
-  min-height: 200px;
+  min-height: 12.5rem;
   width: 100%;
   background-color: var(--background-home);
   display: flex;
   flex-direction: column;
-  padding-block: 32px;
-  padding-inline: 16px;
+  padding-block: 2rem;
+  padding-inline: 1rem;
 }
 .colContaier {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .anna {
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
   font-weight: bold;
   color: white;
+}
+
+@media screen and (min-width: 64rem) {
+  .collumns {
+    font-size: 1.3125rem;
+  }
+  .collumns p {
+    font-size: 1.3125rem;
+  }
+  .colContaier {
+    padding-left: 5%;
+  }
 }

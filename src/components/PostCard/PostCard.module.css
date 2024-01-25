@@ -2,12 +2,13 @@
   min-height: 31.938rem; /*  510px */
   min-width: 19.438rem; /* 311px */
   max-width: 19.438rem; /* 311px */
+  height: 34.375rem;
   background-color: #ffff;
   border-radius: 10px;
   border: 2px solid #00bf63;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -36,7 +37,7 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   word-wrap: break-word;
   text-wrap: balance;
   /* gap: 1rem; */

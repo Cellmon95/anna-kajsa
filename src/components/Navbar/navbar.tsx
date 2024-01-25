@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './navbar.module.css';
+import { useRouter } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 export default function Navbar() {
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
@@ -25,11 +27,17 @@ export default function Navbar() {
 
   function toggleScroll() {
     setBurgerMenuOpen(!burgerMenuOpen);
+    console.log('jeet');
     if (burgerMenuOpen === false) {
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';
     }
+  }
+
+  function asd() {
+    setBurgerMenuOpen(false);
+    document.body.style.overflowY = 'auto';
   }
 
   return (
@@ -61,26 +69,18 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
-          <Link className={styles.links} onClick={toggleScroll} href={'/'}>
+          <Link className={styles.links} onClick={asd} href={'/'}>
             Home
           </Link>
-          <Link
-            className={styles.links}
-            onClick={toggleScroll}
-            href={'/consult'}
-          >
+          <Link className={styles.links} onClick={asd} href={'/consult'}>
             Consulting work
           </Link>
-          <Link
-            className={styles.links}
-            onClick={toggleScroll}
-            href={'/philantropy'}
-          >
+          <Link className={styles.links} onClick={asd} href={'/philantropy'}>
             Philanthropic work
           </Link>
           <Link
-            className={`${styles.lastLink} ${styles.links}`}
-            onClick={toggleScroll}
+            onClick={asd}
+            className={`${styles.lastLink}  ${styles.links}`}
             href={'/creative'}
           >
             Creative work

@@ -15,8 +15,8 @@ export default function Footer() {
             <Link href={'/contact'}>Contact</Link>
           </div>
           <div className={styles.collumns}>
-            <p>email@email.com</p> <p>Phone: +46 702-xxx xxx</p>{' '}
-            <p>a legit Street</p>
+            <p>email@email.com</p>
+            <p>Phone: +46 702-xxx xxx</p> <p>a legit Street</p>
           </div>
         </div>
       </footer>
