@@ -49,7 +49,12 @@ export default function Navbar() {
             : ''
         }`}
       >
-        <h3>anna-kajsa</h3>
+        <Link
+          onClick={asd}
+          href={'/'}
+        >
+          <h3>anna-kajsa</h3>
+        </Link>
         <motion.nav
           className={styles.motionNav}
           variants={variant}

@@ -5,11 +5,16 @@ import Quote from '@/components/Quote/Quote';
 import { client } from '../../../sanity/lib/client';
 import HeroHome from '@/components/HeroHome/heroHome';
 import PageBuilder from '@/components/PageBuilder/PageBuilder';
+import { notFound } from 'next/navigation';
 
 export default async function Home({ params }: { params: { pageId: string } }) {
   const pageData = await client.fetch(
     "*[_type == 'page' && slug.current=='" + params.pageId + "'][0]"
   );
+
+  if (pageData === null) {
+    notFound();
+  }
 
   const pageBuilderData = pageData.pageBuilder;
 
