@@ -22,6 +22,7 @@ export default async function PostContainer() {
             title={card.name}
             image={card.image}
             description={'description'}
+            url='/'
           />
         ))}
       </GeneralCarousel>

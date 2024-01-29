@@ -9,8 +9,8 @@ export const page = defineType({
     defineField({ name: 'slug', type: 'slug', options: { source: 'title' } }),
     defineField({
       name: 'pageBuilder',
-      type: 'array',
       title: 'Page Content',
+      type: 'array',
       of: [
         defineArrayMember({
           name: 'titledParagraph',

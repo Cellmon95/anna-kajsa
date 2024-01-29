@@ -129,7 +129,6 @@ function buildComponent(schemaBlockData: any) {
           contentBlockData={schemaBlockData.content}
         ></RowSpliter>
       );
-
     default:
       break;
   }

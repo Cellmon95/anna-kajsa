@@ -20,7 +20,7 @@ export const navCard = defineType({
     }),
     defineField({
       name: 'description',
-      type: 'string',
+      type: 'text',
     }),
     defineField({
       name: 'image',

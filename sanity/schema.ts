@@ -15,6 +15,7 @@ import { GeneralCarousel } from './schemas/GeneralCarousel';
 import { podcastList } from './schemas/podcastList';
 import { rowSpliter } from './schemas/rowSpliter';
 
+
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     page,
@@ -31,6 +32,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     PostContainer,
     GeneralCarousel,
     podcastList,
-    rowSpliter,
+    rowSpliter
   ],
 };

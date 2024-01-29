@@ -10,6 +10,12 @@ export interface VideoPlayerProps {
 
 export default function VideoPlayer(props: VideoPlayerProps) {
   const [videoHeight, setVideoHeight] = useState<number>(0);
+  let darkBackground: HTMLElement | null;
+  useEffect(() => {
+    darkBackground = document.getElementById('darkBackground');
+    darkBackground?.classList.add('.hide');
+    console.log(darkBackground?.classList);
+  }, []);
 
   useEffect(() => {
     if (props.heroSection != null) {
@@ -20,6 +26,8 @@ export default function VideoPlayer(props: VideoPlayerProps) {
         setVideoHeight(clientWidth * 0.5625);
       });
     }
+
+    darkBackground?.classList.toggle('.hide');
   }, [props.heroSection]);
 
   return (
@@ -39,6 +47,8 @@ export default function VideoPlayer(props: VideoPlayerProps) {
           allowFullScreen
         ></iframe>
       </div>
+
+      <div className={styles.darkBackground}  ></div>
     </>
   );
 }
