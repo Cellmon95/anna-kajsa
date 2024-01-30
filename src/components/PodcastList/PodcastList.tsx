@@ -1,5 +1,9 @@
 import React, { KeyboardEventHandler, useEffect, useState } from 'react';
-import { getSubstackPosts, SubstackPost } from '../../app/utils';
+import {
+  getSpotifyEpisodes,
+  getSubstackPosts,
+  SubstackPost,
+} from '../../app/utils';
 import PostCard from '../PostCard/PostCard';
 
 import styles from './PodcastList.module.css';
@@ -13,7 +17,11 @@ export default function PodcastList() {
   const [postData, setPostData] = useState<SubstackPost[]>([]);
 
   useEffect(() => {
-    getSubstackPosts().then((value) => {
+    /*getSubstackPosts().then((value) => {
+      setPostData(value);
+      setDisplayData(value);
+    });*/
+    getSpotifyEpisodes().then((value) => {
       setPostData(value);
       setDisplayData(value);
     });

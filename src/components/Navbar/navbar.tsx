@@ -49,10 +49,7 @@ export default function Navbar() {
             : ''
         }`}
       >
-        <Link
-          onClick={asd}
-          href={'/'}
-        >
+        <Link onClick={asd} href={'/'}>
           <h3>anna-kajsa</h3>
         </Link>
         <motion.nav
@@ -77,18 +74,21 @@ export default function Navbar() {
           <Link className={styles.links} onClick={asd} href={'/'}>
             Home
           </Link>
-          <Link className={styles.links} onClick={asd} href={'/consult'}>
-            Consulting work
+          <Link className={styles.links} onClick={asd} href={'/services'}>
+            Services
           </Link>
-          <Link className={styles.links} onClick={asd} href={'/philantropy'}>
-            Philanthropic work
+          <Link className={styles.links} onClick={asd} href={'/speaker'}>
+            Speaker
+          </Link>
+          <Link className={styles.links} onClick={asd} href={'/free-play'}>
+            Free Play
           </Link>
           <Link
             onClick={asd}
             className={`${styles.lastLink}  ${styles.links}`}
-            href={'/creative'}
+            href={'/investments'}
           >
-            Creative work
+            Investments
           </Link>
         </motion.nav>
         <button className={styles.iconButton} onClick={toggleScroll}>

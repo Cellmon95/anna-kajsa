@@ -28,7 +28,10 @@ export const titledParagraph = defineType({
             decorators: [
               { title: 'Strong', value: 'strong' },
               { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Strike Through', value: 'strike-through' },
             ],
+            annotations:[],
           },
         },
       ],

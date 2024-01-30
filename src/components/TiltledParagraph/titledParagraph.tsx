@@ -2,7 +2,7 @@
 
 import { color } from 'framer-motion';
 import styles from './titledParagraph.module.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 interface TitledParagraphProps {
   backgroundColor: string;
@@ -15,6 +15,8 @@ export default function TitledParagraph(props: TitledParagraphProps) {
   const backgroundColorStyle: React.CSSProperties = {
     backgroundColor: backgroundColor,
   };
+
+  const content = props.content || [];
   return (
     <>
       <div
@@ -22,7 +24,7 @@ export default function TitledParagraph(props: TitledParagraphProps) {
         className={styles.titledParagraphContainer}
       >
         <h1>{props.heading}</h1>
-        {props.content.map((block, i, array) => {
+        {content.map((block, i: number, array: any[]) => {
           if (i !== array.length - 1) return buildBlock(block);
           else return buildBlock(block, true);
         })}
