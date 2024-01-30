@@ -1,10 +1,7 @@
 .videoPlayer {
   position: fixed;
   width: 80%;
-
-  display: flex;
-  justify-self: center;
-  align-items: center;
+  height: 45%;
 
   background-color: white;
 
@@ -30,3 +27,6 @@
   z-index: 1;
 }
 
+.hide {
+  height: 0 !important;
+}

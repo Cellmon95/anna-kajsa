@@ -25,7 +25,9 @@ export default function VideoPlayer(props: VideoPlayerProps) {
         setShowVideo(true);
         const clientWidth =
           document.getElementById('videoPlayer')?.clientWidth || 0;
+
         setVideoHeight(clientWidth * 0.5625);
+        console.log(clientWidth);
       });
     }
   }, [props.heroSection]);
@@ -33,7 +35,7 @@ export default function VideoPlayer(props: VideoPlayerProps) {
   return (
     <>
       <div
-        className={styles.videoPlayer + (showVideo ? '' : '.videoHide')}
+        className={styles.videoPlayer + (showVideo ? '' : ' ' + styles.hide)}
         id="videoPlayer"
         style={{ height: videoHeight + 'px' }}
       >
