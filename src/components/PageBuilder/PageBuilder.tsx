@@ -11,6 +11,7 @@ import TitledParagraph from '../TiltledParagraph/titledParagraph';
 import PostContainer from '../PostContainer/PostContainer';
 import GeneralCarousel from '../GeneralCarousel/GeneralCarousel';
 import PodcastList from '../PodcastList/PodcastList';
+import { PodcastContainer } from '../PodcastContainer/PodcastContainer';
 
 interface PageBuilderProps {
   pageBuilderData: any;
@@ -99,7 +100,7 @@ function buildComponent(schemaBlockData: any) {
           key={schemaBlockData._key}
           description={schemaBlockData.description}
           title={schemaBlockData.title}
-          image={urlForImage(schemaBlockData.img)}
+          img={urlForImage(schemaBlockData.img)}
           url={'/'}
         ></PostCard>
       );
@@ -117,6 +118,9 @@ function buildComponent(schemaBlockData: any) {
 
     case 'podcastList':
       return <PodcastList key={schemaBlockData._key}></PodcastList>;
+
+    case 'PodcastContainer':
+      return <PodcastContainer key={schemaBlockData._key}></PodcastContainer>;
 
     default:
       break;
