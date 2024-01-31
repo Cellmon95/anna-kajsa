@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './navbar.module.css';
+import { useRouter } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 export default function Navbar() {
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
@@ -25,11 +27,17 @@ export default function Navbar() {
 
   function toggleScroll() {
     setBurgerMenuOpen(!burgerMenuOpen);
-    if (burgerMenuOpen == false) {
+    console.log('jeet');
+    if (burgerMenuOpen === false) {
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';
     }
+  }
+
+  function asd() {
+    setBurgerMenuOpen(false);
+    document.body.style.overflowY = 'auto';
   }
 
   return (
@@ -41,7 +49,9 @@ export default function Navbar() {
             : ''
         }`}
       >
-        <h3>anna-kajsa</h3>
+        <Link onClick={asd} href={'/'}>
+          <h3>anna-kajsa</h3>
+        </Link>
         <motion.nav
           className={styles.motionNav}
           variants={variant}
@@ -61,29 +71,24 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
-          <Link className={styles.links} onClick={toggleScroll} href={'/'}>
+          <Link className={styles.links} onClick={asd} href={'/'}>
             Home
           </Link>
-          <Link
-            className={styles.links}
-            onClick={toggleScroll}
-            href={'/consult'}
-          >
-            Consulting work
+          <Link className={styles.links} onClick={asd} href={'/services'}>
+            Services
+          </Link>
+          <Link className={styles.links} onClick={asd} href={'/speaker'}>
+            Speaker
+          </Link>
+          <Link className={styles.links} onClick={asd} href={'/free-play'}>
+            Free Play
           </Link>
           <Link
-            className={styles.links}
-            onClick={toggleScroll}
-            href={'/philantropy'}
+            onClick={asd}
+            className={`${styles.lastLink}  ${styles.links}`}
+            href={'/investments'}
           >
-            Philanthropic work
-          </Link>
-          <Link
-            className={`${styles.lastLink} ${styles.links}`}
-            onClick={toggleScroll}
-            href={'/creative'}
-          >
-            Creative work
+            Investments
           </Link>
         </motion.nav>
         <button className={styles.iconButton} onClick={toggleScroll}>

@@ -3,7 +3,7 @@
 import { Image as Img } from 'sanity';
 import { urlForImage } from '../../../sanity/lib/image';
 import Image from 'next/image';
-import { relative } from 'path';
+import style from './Photo.module.css';
 
 interface PhotoProps {
   alt: string;
@@ -11,16 +11,22 @@ interface PhotoProps {
 }
 
 export default function Photo(props: PhotoProps) {
-  const imgUrl = urlForImage(props.img);
+  const imgUrl = urlForImage(props.img, 1920);
   return (
     <>
-      <Image
-        src={imgUrl}
-        alt={props.alt}
-        height={500}
-        width={375}
-        style={{ width: '100%' }}
-      ></Image>
+      <div className={style.photoContainer}>
+        <Image
+          src={imgUrl}
+          alt={props.alt}
+          height={500}
+          width={1920}
+          style={{
+            width: '100%',
+            maxWidth: '800px',
+            height: 'auto',
+          }}
+        ></Image>
+      </div>
     </>
   );
 }

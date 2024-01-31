@@ -13,6 +13,8 @@ interface PostCardProps {
 
 const PostCard = (props: PostCardProps) => {
   const url = props.url || '/'; // fallback url to home page
+  const router = useRouter();
+  const trimedDescription = props.description.substring(0, 230) + '...';
 
   return (
     <Link href={url} className={styles.btn}>
@@ -27,6 +29,8 @@ const PostCard = (props: PostCardProps) => {
           height={200}
         />
         <p className={styles.p}>{props.description}</p>
+        <img className={styles.img} src={props.image} alt="post cover image" />
+        <p className={styles.p}>{trimedDescription}</p>
       </div>
     </Link>
   );

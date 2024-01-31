@@ -20,7 +20,7 @@ export const navCard = defineType({
     }),
     defineField({
       name: 'description',
-      type: 'string',
+      type: 'text',
     }),
     defineField({
       name: 'image',
@@ -36,6 +36,7 @@ export const navCard = defineType({
     defineField({
       name: 'link',
       type: 'url',
+      validation: (rule) => rule.uri({ allowRelative: true }),
     }),
     defineField({
       name: 'linkCalor',

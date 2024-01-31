@@ -17,7 +17,7 @@ const Carousel = (props: CarouselProps) => {
             description: child.description,
             title: child.title,
             image: child.image,
-            link: '/',
+            link: child.link,
             linktitle: child.linkTitle,
             linkColor: child.linkCalor || '#ffffff',
           };

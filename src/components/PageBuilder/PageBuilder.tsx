@@ -12,6 +12,8 @@ import PostContainer from '../PostContainer/PostContainer';
 import GeneralCarousel from '../GeneralCarousel/GeneralCarousel';
 import PodcastList from '../PodcastList/PodcastList';
 import { PodcastContainer } from '../PodcastContainer/PodcastContainer';
+import RowSpliter from '../RowSpliter/RowSpliter';
+
 
 interface PageBuilderProps {
   pageBuilderData: any;
@@ -27,7 +29,9 @@ export default function PageBuilder(props: PageBuilderProps) {
   return (
     <>
       <main>
-        {pageBuilderData.map((pageBlockData) => buildComponent(pageBlockData))}
+        {pageBuilderData.map((schemaBlockData) =>
+          buildComponent(schemaBlockData)
+        )}
       </main>
     </>
   );
@@ -63,6 +67,7 @@ function buildComponent(schemaBlockData: any) {
         <HeroHome
           key={schemaBlockData._key}
           heroParagraph={schemaBlockData.text}
+          img={schemaBlockData.backgroundImage}
         ></HeroHome>
       );
     case 'otherPageHero':
@@ -100,7 +105,7 @@ function buildComponent(schemaBlockData: any) {
           key={schemaBlockData._key}
           description={schemaBlockData.description}
           title={schemaBlockData.title}
-          img={urlForImage(schemaBlockData.img)}
+          image={urlForImage(schemaBlockData.img, 200)}
           url={'/'}
         ></PostCard>
       );
@@ -122,6 +127,13 @@ function buildComponent(schemaBlockData: any) {
     case 'PodcastContainer':
       return <PodcastContainer key={schemaBlockData._key}></PodcastContainer>;
 
+    case 'rowSpliter':
+      return (
+        <RowSpliter
+          key={schemaBlockData._key}
+          contentBlockData={schemaBlockData.content}
+        ></RowSpliter>
+      );
     default:
       break;
   }

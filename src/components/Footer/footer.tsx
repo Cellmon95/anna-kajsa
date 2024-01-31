@@ -10,13 +10,13 @@ export default function Footer() {
           <div className={styles.collumns}>
             <Link href={'/'}>Home</Link>
             <Link href={'/consult'}>Consult</Link>
-            <Link href={'/philanthropy'}>philanthropic</Link>
+            <Link href={'/philanthropy'}>Philanthropic</Link>
             <Link href={'/creative'}>Creative</Link>
             <Link href={'/contact'}>Contact</Link>
           </div>
           <div className={styles.collumns}>
-            <p>email@email.com</p> <p>Phone: +46 702-xxx xxx</p>{' '}
-            <p>a legit Street</p>
+            <p>email@email.com</p>
+            <p>Phone: +46 702-xxx xxx</p> <p>a legit Street</p>
           </div>
         </div>
       </footer>

@@ -1,5 +1,9 @@
 import React, { KeyboardEventHandler, useEffect, useState } from 'react';
-import { getSubstackPosts, SubstackPost } from '../../app/utils';
+import {
+  getSpotifyEpisodes,
+  getSubstackPosts,
+  SubstackPost,
+} from '../../app/utils';
 import PostCard from '../PostCard/PostCard';
 
 import styles from './PodcastList.module.css';
@@ -13,7 +17,11 @@ export default function PodcastList() {
   const [postData, setPostData] = useState<SubstackPost[]>([]);
 
   useEffect(() => {
-    getSubstackPosts().then((value) => {
+    /*getSubstackPosts().then((value) => {
+      setPostData(value);
+      setDisplayData(value);
+    });*/
+    getSpotifyEpisodes().then((value) => {
       setPostData(value);
       setDisplayData(value);
     });
@@ -60,14 +68,14 @@ export default function PodcastList() {
     }
   }
 
-  function searchPostList(e: React.KeyboardEvent) {
+  function searchPostList(e: any) {
     const searchField = document.getElementById(
       'searchField'
     ) as HTMLInputElement;
 
     const postDataCopy: SubstackPost[] = [...postData];
     const tmpDisplayData: SubstackPost[] = [];
-    const searchString: string = searchField.value + e.key;
+    const searchString: string = searchField.value;
 
     postDataCopy.forEach((post) => {
       const postTitleUpper = post.title.toUpperCase();
@@ -84,12 +92,18 @@ export default function PodcastList() {
     <>
       <section>
         <section className={styles.sortBar}>
-          <input
-            type="text"
-            placeholder="search"
-            onKeyDown={searchPostList}
-            id="searchField"
-          ></input>
+          <div>
+            <input
+              type="text"
+              placeholder="search"
+              id="searchField"
+              className={styles.searchBar}
+            ></input>
+            <button className={styles.searchButton} onClick={searchPostList}>
+              Search
+            </button>
+          </div>
+
           <div>
             <label>Sort on: </label>
             <select name="sortOption" id="sortOption" onChange={sortPostList}>
@@ -99,16 +113,18 @@ export default function PodcastList() {
           </div>
         </section>
 
-        <section className={styles.postCardList}>
-          {displayData.map((substackPost) => (
-            <PostCard
-              title={substackPost.title}
-              description={substackPost.desc}
-              image={substackPost.img}
-              url={substackPost.link}
-              key={substackPost.title}
-            ></PostCard>
-          ))}
+        <section className={styles.postCardListContainer}>
+          <section className={styles.postCardList}>
+            {displayData.map((substackPost) => (
+              <PostCard
+                title={substackPost.title}
+                description={substackPost.desc}
+                image={substackPost.img}
+                url={substackPost.link}
+                key={substackPost.title}
+              ></PostCard>
+            ))}
+          </section>
         </section>
       </section>
     </>

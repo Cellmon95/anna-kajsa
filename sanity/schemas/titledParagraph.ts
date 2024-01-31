@@ -5,14 +5,37 @@ export const titledParagraph = defineType({
   type: 'object',
   title: 'Titled Paragraph',
   fields: [
+    {
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    },
     defineField({
       name: 'heading',
+      title: 'Heading',
       type: 'string',
     }),
-    defineField({
+    {
       name: 'content',
-      type: 'string',
-    }),
+      title: 'Content',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          styles: [],
+          lists: [],
+          marks: {
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Italic', value: 'em' },
+              { title: 'Underline', value: 'underline' },
+              { title: 'Strike Through', value: 'strike-through' },
+            ],
+            annotations:[],
+          },
+        },
+      ],
+    },
     defineField({
       name: 'backgroundColor',
       type: 'color',
