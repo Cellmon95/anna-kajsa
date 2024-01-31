@@ -1,4 +1,3 @@
-'use client';
 import { ReactNode } from 'react';
 import styles from './GeneralCarousel.module.css';
 import NavCard from '../navcard/NavCard';

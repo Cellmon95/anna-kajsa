@@ -13,8 +13,8 @@ import blogPost from './schemas/blogPost';
 import { PostContainer } from './schemas/PostContainer';
 import { GeneralCarousel } from './schemas/GeneralCarousel';
 import { podcastList } from './schemas/podcastList';
+import { PodcastContainer } from './schemas/PodcastContainer';
 import { rowSpliter } from './schemas/rowSpliter';
-
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -32,6 +32,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     PostContainer,
     GeneralCarousel,
     podcastList,
+    PodcastContainer,
     rowSpliter
+
   ],
 };

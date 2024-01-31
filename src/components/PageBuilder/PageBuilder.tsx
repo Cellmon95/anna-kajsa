@@ -11,7 +11,9 @@ import TitledParagraph from '../TiltledParagraph/titledParagraph';
 import PostContainer from '../PostContainer/PostContainer';
 import GeneralCarousel from '../GeneralCarousel/GeneralCarousel';
 import PodcastList from '../PodcastList/PodcastList';
+import { PodcastContainer } from '../PodcastContainer/PodcastContainer';
 import RowSpliter from '../RowSpliter/RowSpliter';
+
 
 interface PageBuilderProps {
   pageBuilderData: any;
@@ -121,6 +123,9 @@ function buildComponent(schemaBlockData: any) {
 
     case 'podcastList':
       return <PodcastList key={schemaBlockData._key}></PodcastList>;
+
+    case 'PodcastContainer':
+      return <PodcastContainer key={schemaBlockData._key}></PodcastContainer>;
 
     case 'rowSpliter':
       return (

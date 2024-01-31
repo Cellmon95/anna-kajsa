@@ -53,8 +53,8 @@ export const page = defineType({
           type: 'podcastList',
         }),
         defineArrayMember({
-          name: 'rowSpliter',
-          type: 'rowSpliter',
+          name: 'PodcastContainer',
+          type: 'PodcastContainer',
         }),
       ],
     }),
